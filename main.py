@@ -766,4 +766,4 @@ async def uptime_count():
 
 
 client.loop.create_task(uptime_count())
-client.run(TOKEN6)
+client.run('NTc0MTM1NTAyNTY3ODk5MTcz.XM0_Zg.FvY-VSeXw_g0IiPeMndwAvaUDs0')

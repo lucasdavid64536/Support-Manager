@@ -81,36 +81,6 @@ def close_invalids():
         
     return sqlib.tickets.get_all()
 
-
-def post_to_apis():
-    domains = {
-        'discordbots.org': 'API-TOKEN',
-        'bots.discord.pw': 'API-TOKEN'
-    }
-    for domain in domains:
-        count_json = json.dumps({
-            "server_count": len(client.servers)
-        })
-
-        # Resolve HTTP redirects
-        api_redirect_url = "https://{0}/api/bots/{1}/stats".format(domain, client.user.id)
-
-        # Construct request and post server count
-        api_req = urllib.request.Request(api_redirect_url)
-
-        api_req.add_header(
-            "Content-Type",
-            "application/json"
-        )
-
-        api_req.add_header(
-            "Authorization",
-            domains[domain]
-        )
-
-        urllib.request.urlopen(api_req, count_json.encode("ascii"))
-
-
 @client.event
 async def on_ready():
     print(client.user.name)

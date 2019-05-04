@@ -91,7 +91,6 @@ async def on_ready():
             sqlib.servers.add_element(server.id, {'prefix': '/'})
 
     # print(list(map(lambda s: s.name, client.servers)))
-    post_to_apis()
 
 
 @client.event
